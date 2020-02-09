@@ -1,10 +1,5 @@
 # sleuth配置
-spring: 
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-      use-new-id-generator-mappings: true
+spring:  
   jackson:
     serialization:
       indent_output: false  
