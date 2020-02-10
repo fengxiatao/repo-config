@@ -4,7 +4,18 @@ server:
     max-threads: 500 # Maximum amount of worker threads.
     min-spare-threads: 50 # Minimum amount of worker threads
 
-spring:  
+spring: 
+  cloud:
+    routes:
+    -  id: example_route
+       url: http://localhost:8762
+       predicates:
+       - Method=GET
+       - Path=/account/(id)
+       filters:
+       - AddRequestHeader=X-Request-ID,  123
+       - PrefixPath=/api
+     
   jackson:
     serialization:
       indent_output: false  
