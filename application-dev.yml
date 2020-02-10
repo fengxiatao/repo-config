@@ -80,6 +80,10 @@ hystrix:
             timeoutInMilliseconds: 60000
 #关闭验证
 management:
+  endpoints:
+    web: 
+      exposure: 
+        include: bus-refresh
   metrics:
     web:
       server:
