@@ -1,0 +1,16 @@
+server:
+  port: 8764
+  tomcat:
+    max-threads: 500 # Maximum amount of worker threads.
+    min-spare-threads: 50 # Minimum amount of worker threads
+
+spring:  
+  jackson:
+    serialization:
+      indent_output: false  
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://yhl-server:8761/eureka/
