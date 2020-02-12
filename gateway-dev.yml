@@ -3,6 +3,9 @@ server:
   tomcat:
     max-threads: 500 # Maximum amount of worker threads.
     min-spare-threads: 50 # Minimum amount of worker threads
+zuul:
+  routes:
+    storage: http://192.168.3.136:8763
 eureka:
   instance:
     prefer-ip-address: true
