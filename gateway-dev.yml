@@ -2,10 +2,15 @@ server:
   port: 8764
   tomcat:
     max-threads: 500 # Maximum amount of worker threads.
-    min-spare-threads: 50 # Minimum amount of worker threads
-zuul:
-  routes:
-    storage: http://192.168.3.136:8763
+    min-spare-threads: 50 # Minimum amount of worker threads 
+spring: 
+  cloud:
+    gateway:
+      routes:
+      - id: path_route
+        uri: http://cxytiandi.com
+        predicates:
+        - Path=/course
 eureka:
   instance:
     prefer-ip-address: true
